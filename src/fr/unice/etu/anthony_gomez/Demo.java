@@ -9,37 +9,38 @@ public class Demo {
 		Demo demo = new Demo();
 		demo.explore(".");
 	}
-	
-	
+
 	public void explore(String path) {
 		File reporitory = new File(path);
-		
+
 		FilenameFilter filenameFilter = new FilenameFilter() {
-			
+
 			@Override
 			public boolean accept(File dir, String name) {
-				
+
 				boolean isAccept = false;
-				
-				// TODO Auto-generated method stub
-				if(dir.isDirectory() || name.toLowerCase().endsWith(".java") )  {
-					if(name.toLowerCase().endsWith(".java")) {
-						System.out.println("is accepted : "+dir.toString()+"\\"+name);
-					}
-					
+				File file = new File(dir+"\\"+name);
+
+				if (file.isDirectory()) {
 					isAccept = true;
 				}
-				
+
+				else if(name.toLowerCase().endsWith(".java")) {
+					isAccept = true;
+				}
+
 				return isAccept;
 			}
 		};
-		
+
 		File[] list = reporitory.listFiles(filenameFilter);
-		
+
 		for (File file : list) {
-			
 			if(file.isDirectory()) {
 				explore(file.getPath());
+			}
+			else {
+				System.out.println(file.toString());
 			}
 		}
 	}
