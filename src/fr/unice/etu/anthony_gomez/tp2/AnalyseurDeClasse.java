@@ -41,19 +41,10 @@ public class AnalyseurDeClasse {
   public static void afficheEnTeteClasse(Class<?> cl) {
     //  Affichage du modifier et du nom de la classe
 	int m = cl.getModifiers();
-	String modifier = "";
 	
-	if(Modifier.isPrivate(m)) {
-		modifier = "private";
-	}
-	else if (Modifier.isPublic(m)) {
-		modifier = "public";
-	}
-	else if (Modifier.isProtected(m)) {
-		modifier = "protected";
-	}
 	
-    System.out.println("Modifier : "+modifier);
+	
+    System.out.println("Modifier : "+Modifier.toString(m));
     System.out.println("Nom de la classe: "+cl.getName());
 
    // Récupération de la superclasse si elle existe (null si cl est le type Object)
