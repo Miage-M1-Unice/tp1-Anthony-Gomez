@@ -78,6 +78,7 @@ public class AnalyseurDeClasse {
 
   	public static void afficheConstructeurs(Class<?> cl) {
     // CODE A ECRIRE
+  		System.out.println("Constructeurs ");
 	  Constructor<?>[] constructors = cl.getConstructors();
 	  for (Constructor<?> constructor : constructors) {
 		System.out.println(constructor);
