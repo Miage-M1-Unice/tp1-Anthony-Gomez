@@ -1,4 +1,4 @@
-package fr.unice.etu.anthony_gomez;
+package fr.unice.etu.anthony_gomez.tp1;
 
 import java.io.File;
 import java.io.FilenameFilter;
